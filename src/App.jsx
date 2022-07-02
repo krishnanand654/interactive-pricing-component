@@ -145,57 +145,67 @@ function App() {
         </p>
 
         <div className="card">
-          <div className="flex">
-            <p className="views">{localStorage.getItem("views")} PAGEVIEWS</p>
+          <div className="card-1">
+            <div className="flex">
+              <p className="views">{localStorage.getItem("views")} PAGEVIEWS</p>
 
-            <p>
-              <span className="amount">${localStorage.getItem("mcost")}</span>
-              <span className="mnth-amount"> /month</span>
-            </p>
-          </div>
-
-          <FormGroup>
-            <input
-              className="slider"
-              id="slider"
-              type="range"
-              min="20"
-              max="100"
-              step="20"
-              onChange={(e) => setPrice(e.target.value)}
-            />
-
-            <div className="toggle-con">
-              <Stack direction="row" spacing={1} alignItems="center">
-                <Typography
-                  style={{
-                    fontSize: "10px",
-                    fontWeight: "600",
-                    color: "hsl(225, 20%, 60%)",
-                    fontFamily: "Manrope",
-                  }}
-                >
-                  Monthly Billing
-                </Typography>
-                <AntSwitch
-                  inputProps={{ "aria-label": "ant design" }}
-                  checked={checked}
-                  onChange={handleChange}
-                />
-                <Typography
-                  style={{
-                    fontSize: "10px",
-                    fontWeight: "600",
-                    color: "hsl(225, 20%, 60%)",
-                    fontFamily: "Manrope",
-                  }}
-                >
-                  Yearly Billing
-                </Typography>
-                <p className="discount">25% discount</p>
-              </Stack>
+              <p className="amount-ctn">
+                <span className="amount">${localStorage.getItem("mcost")}</span>
+                <span className="mnth-amount"> /month</span>
+              </p>
             </div>
-            <div className="line"></div>
+
+            <FormGroup>
+              <input
+                className="slider"
+                id="slider"
+                type="range"
+                min="20"
+                max="100"
+                step="20"
+                onChange={(e) => setPrice(e.target.value)}
+              />
+
+              <p className="amount-ctn-mobile">
+                <span className="amount">${localStorage.getItem("mcost")}</span>
+                <span className="mnth-amount"> /month</span>
+              </p>
+
+              <div className="toggle-con">
+                <Stack direction="row" spacing={1} alignItems="center">
+                  <Typography
+                    style={{
+                      fontSize: "10px",
+                      fontWeight: "600",
+                      color: "hsl(225, 20%, 60%)",
+                      fontFamily: "Manrope",
+                    }}
+                  >
+                    Monthly Billing
+                  </Typography>
+                  <AntSwitch
+                    inputProps={{ "aria-label": "ant design" }}
+                    checked={checked}
+                    onChange={handleChange}
+                  />
+                  <Typography
+                    style={{
+                      fontSize: "10px",
+                      fontWeight: "600",
+                      color: "hsl(225, 20%, 60%)",
+                      fontFamily: "Manrope",
+                    }}
+                  >
+                    Yearly Billing
+                  </Typography>
+                  <p className="discount">25% discount</p>
+
+                  <p className="discount-mobile">-25%</p>
+                </Stack>
+              </div>
+            </FormGroup>
+          </div>
+          <div className="card-2">
             <div className="flex-2">
               <ul className="list">
                 <li>
@@ -211,9 +221,10 @@ function App() {
                   Email reports
                 </li>
               </ul>
+
               <button className="btn">Start my trail</button>
             </div>
-          </FormGroup>
+          </div>
         </div>
       </div>
     </div>
