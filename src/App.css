@@ -1,38 +1,199 @@
-.App {
-  text-align: center;
+.slider {
+  width: 400px;
+  -webkit-appearance: none;
+  height: 7px;
+  border-radius: 10px;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  background-color: hsl(223, 50%, 87%);
+  margin: 30px 0 40px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.slider::-webkit-slider-thumb {
+  background: url("/public/icon-slider.svg");
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: hsl(174, 86%, 45%);
+  width: 40px;
+  height: 40px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  box-shadow: 0 0 30px hsl(174, 86%, 45%);
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card {
+  background-color: #fff;
+  width: 460px;
+  padding: 10px 30px 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 30px hsla(0, 0%, 0%, 0.093);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.flex {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 70vh;
+  flex-direction: column;
+  width: 100%;
+}
+
+.views,
+.mnth-amount {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: hsl(225, 20%, 60%);
+}
+
+.toggle-con {
+  margin-left: 110px;
+}
+
+.amount {
+  font-size: 32px;
+  font-weight: 800;
+  color: hsl(227, 35%, 25%);
+}
+
+.mnth-amount {
+  position: relative;
+  top: -6px;
+}
+
+.discount {
+  font-size: 8px;
+  font-weight: 800;
+  color: hsl(15, 100%, 70%);
+  background-color: hsl(14, 92%, 95%);
+  padding: 1px 5px 2px;
+  border-radius: 50px;
+}
+.line {
+  border-top: 1px solid hsl(224, 65%, 95%);
+  position: relative;
+  left: -30px;
+  top: 30px;
+  width: 460px;
+}
+.flex-2 {
+  margin: 50px 0 0;
+  padding-right: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.list {
+  list-style: none;
+  font-size: 10px;
+  padding: 0;
+}
+
+.list li {
+  margin-bottom: 5px;
+  color: hsl(225, 20%, 60%);
+}
+
+.btn {
+  border: none;
+  background-color: hsl(227, 35%, 25%);
   color: white;
+  font-family: "Manrope", sans-serif;
+  height: 30px;
+  border-radius: 20px;
+  width: 140px;
+  padding: 5px 0 5px;
+  font-size: 11px;
+  color: hsl(226, 100%, 87%);
+  font-weight: 800;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.btn:hover {
+  color: #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.tick {
+  margin-right: 10px;
+}
+
+.title {
+  font-size: 24px;
+  margin: 0 0 10px;
+  color: hsl(227, 35%, 25%);
+  z-index: 2;
+}
+
+.caption {
+  padding: 0;
+  color: hsl(225, 20%, 60%);
+  font-size: 12px;
+  margin-bottom: 100px;
+  z-index: 2;
+}
+
+.logo {
+  position: relative;
+  top: 100px;
+  z-index: 1;
+}
+
+#slider {
+  background: linear-gradient(
+    to right,
+    hsl(174, 77%, 80%) 0%,
+    hsl(174, 77%, 80%) 50%,
+    hsl(223, 50%, 87%) 50%,
+    hsl(223, 50%, 87%) 100%
+  );
+  border: none;
+  border-radius: 8px;
+  height: 7px;
+  width: 400px;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+@media screen and (max-width: 511px) {
+  .card {
+    width: 300px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    flex-direction: column;
+    width: 100vw;
+  }
+
+  .slider,
+  #slider {
+    width: 100%;
+  }
+
+  .flex-2 {
+    flex-direction: column;
+    display: none;
+  }
+
+  .toggle-con {
+    align-items: center;
+    display: none;
+    margin: 0;
   }
 }
